@@ -16,15 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from firstapp import views
+from firstapp import views as main_1
+from secondapp import views as hepl_1
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    # always set app index
+    path('', main_1.index, name='index'),
+    path(r'', include('firstapp.urls')),
 
-    path(r'registration', views.register, name='register'),
-    path(r'login', views.user_login, name='user_login'),
-    path(r'logout', views.user_logout, name='user_logout'),
-    # include urls from app---mapping
-    url(r'^page1/', include('firstapp.urls')),
+    path('', hepl_1.index, name='index'),
+    path(r'', include('secondapp.urls')),
+
     path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,29 @@
+ pkill -f "python manage.py runserver"
+
+
+ //method topic
+   url mapping to app url file
+   use os model for file path in settings.py for comparability with other os::: note always make addon dir join to base dir in settings.py
+   mkdir template /in root dir then join variables to settings.py
+   mkdir static /in root dir then join variables to settings.py
+
+//models
+   sql.lite
+   create model class
+   python manage.py migrate
+   python manage.py makemigrations <name of app>
+   python manage.py migrate
+   register models in admin.py / import class the register admin.site.register(<model class name>)
+
+   //accessing db via shell example
+   python manage.py shell
+   from firstapp.models import Topic
+   f = Topic(top_name="facebook")
+   f.save()
+   print(Topic.objects.all()
+   quite()
+   \\END shell example
+
+   //python manage.py createsuperuser
+
+

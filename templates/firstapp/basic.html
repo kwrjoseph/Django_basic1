@@ -21,7 +21,7 @@
             <li><a class="navbar-link" href="{% url 'firstapp:register' %}">Register</a></li>
 
             {% if user.is_authenticated %}
-                <li><a class="navbar-link" href="{% url 'user_logout'%}">Logout </a></li>
+                <li><a class="navbar-link" href="{% url 'firstapp:user_logout'%}">Logout </a></li>
             {% else %}
                 <li><a class="navbar-link" href="{% url 'firstapp:user_login'%}">Login </a></li>
             {% endif %}
